@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#251b1c" />
+    <title>灵魂口感</title>
+    <link rel="stylesheet" href="./styles.css?v=2" />
+    <link rel="stylesheet" href="./taste.css" />
+    <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.js" defer></script>
+    <script>
+      window.QUIZ_CONFIG = {
+        shareTitle: "灵魂口感",
+        sharePrefix: "我的灵魂口感是",
+        resultKicker: "你的灵魂口感",
+        archetypes: {
+          sparkling: {
+            id: "sparkling",
+            name: "气泡水型",
+            shortName: "气泡水",
+            tagline: "入口清亮，情绪也藏不住那一串上升的小气泡",
+            image: "./assets/taste-sparkling.jpg",
+            color: "#37b3a3",
+            keywords: ["清爽", "直接", "轻快", "清醒"],
+            description:
+              "你不喜欢把话绕弯，情绪来得快去得也快。和气泡水一样，初入口有点冲，但清爽利落，让人愿意一直喝下去。你擅长让尴尬变轻松，也能在一群人里最快找到共同话题；只是偶尔你的反应快过理解，话已经出口，对方的情绪才刚跟上。",
+            strengths: ["接梗快，能迅速破冰", "情绪透明，不记隔夜仇", "状态好时自带轻盈感"],
+            challenges: ["兴奋来得快，也容易快速失温", "不喜欢沉重，可能无意回避深度", "有时说话太快，收不回来"],
+            scene: "阳光很足的午后，路边的小店或刚下过雨的街道。",
+            match: "能接住你的快节奏，也能提醒你慢一点的人。",
+            coreDrive: "你被新鲜感、轻松和即时反馈驱动，讨厌憋着，喜欢把事情摊开说清楚。",
+            tension: "你表面轻快，其实也怕被当成不够认真的人，于是偶尔会用力表现得稳定。",
+            stressMode: "压力大时你反而更爱说笑，把不安包装成玩笑，直到夜深才觉得空。",
+            growthReminder: "清爽不等于浅；把一件事慢慢说透，并不会让你变得沉重。",
+            growthActions: [
+              "练习在情绪消退后，回头把重要的话再说一遍",
+              "每周留一段不看消息、不说话的时间",
+              "开始前先问自己：这是想表达，还是想证明",
+            ],
+            attract: "会被安静但有回应、能让你安心慢下来的人吸引",
+            relationWatch: "太追求轻松，可能会让对方觉得你不够认真。",
+            dailyRhythm: "你偏爱轻快、有即时反馈的节奏，想到什么就接什么。独处超过某个点会掉电，你需要轻松的人和新鲜话题把情绪重新顶起来。",
+            decisionStyle: "你通常凭第一反应拍板，不喜欢来回权衡。对你有用的是先问一句“我会不会很快就后悔”，再决定要不要把速度放慢半拍。",
+            conflictStyle: "你不喜欢冷战，会想快点说开。情绪上来时你语速快、玩笑多，可能让对方分不清你是认真还是在掩饰受伤。",
+            relationshipNeed: "你需要对方接得住你的快节奏，也能在你安静下来时不再追问。稳定不是约束，而是让你偶尔慢下来也不会觉得无聊。",
+          },
+          coldbrew: {
+            id: "coldbrew",
+            name: "冷萃型",
+            shortName: "冷萃",
+            tagline: "慢热不是没味道，只是需要时间把浓度慢慢泡出来",
+            image: "./assets/taste-coldbrew.jpg",
+            color: "#5a4438",
+            keywords: ["清醒", "慢热", "内聚", "稳定"],
+            description:
+              "你像冷萃咖啡，表面温度低，不急着讨好任何人。熟悉之后，你才会显出那种稳定而绵长的味道。你有自己的节奏，也不容易被外界的喧嚣带走；但你的安静不是没有情绪，而是习惯把浓度先沉到杯底，等值得的人慢慢喝出来。",
+            strengths: ["专注力强，能长时间沉浸", "情绪稳定，不容易被带节奏", "一旦认定，交付感很强"],
+            challenges: ["慢热到让不熟的人误以为你冷淡", "容易把情绪压得太久", "习惯独自消化，难以及时求助"],
+            scene: "清晨无人的咖啡馆，或深夜只开一盏灯的桌子。",
+            match: "愿意给你时间，不逼你立刻热情起来的人。",
+            coreDrive: "你被深度、专注和稳定驱动，宁可慢慢来，也不想虚张声势。",
+            tension: "你渴望被真正理解，却不愿先开口；于是总在等待一个能读懂沉默的人。",
+            stressMode: "压力下你会更沉默、更抽离，用工作或独处把情绪泡起来，延后处理。",
+            growthReminder: "你可以保留慢热，但别让重要的人等太久。",
+            growthActions: [
+              "每天主动分享一件今天的小事",
+              "在情绪积压前，先对一个人说出关键词",
+              "练习给不确定的关系一个明确回应",
+            ],
+            attract: "会被真诚、稳定、不喧哗的人吸引",
+            relationWatch: "沉默太久，可能让对方分不清你是冷静还是疏远。",
+            dailyRhythm: "你需要可预期的秩序，喜欢把注意力长时间泡在一件事里。对临时变化你会先抽离，等确认自己还有余量再回应。",
+            decisionStyle: "你会先观察、再判断，重要决定尤其需要一段不被打扰的时间。你容易把“还没准备好”当成理由，让机会等太久。",
+            conflictStyle: "你倾向冷处理，把情绪压下去独自消化。表面像没事，其实你记得每个没被理解的细节，只等某个更合适的时间才可能提起。",
+            relationshipNeed: "你需要时间和耐心，也怕对方把你的慢热当成不在乎。偶尔提前给一句回应，会比事后解释更能守住关系。",
+          },
+          hottea: {
+            id: "hottea",
+            name: "热红茶型",
+            shortName: "热红茶",
+            tagline: "看似日常，其实有回甘，也总能把别人焐热",
+            image: "./assets/taste-hottea.jpg",
+            color: "#b05b3c",
+            keywords: ["温和", "可靠", "回甘", "治愈"],
+            description:
+              "你像一杯恰到好处的热红茶，不抢戏，却总能在别人冷的时候给一点温度。你擅长照顾细节，也有一种让人愿意靠近的日常感。别人只看到你总在照顾人，却未必知道你也希望某个下午，能有人不问原因地给你递一杯热的。",
+            strengths: ["情绪稳定，容易让人安心", "擅长照顾细节，记得住别人的小事", "冲突后愿意先递台阶"],
+            challenges: ["容易优先照顾别人，忽略自己", "边界偏软，有时会委屈自己", "习惯稳定，对突然变化有些慌"],
+            scene: "下雨天的窗边，或和家人朋友慢慢聊天的晚饭桌。",
+            match: "懂得珍惜你的好，也愿意反过来照顾你的人。",
+            coreDrive: "你被连接、被需要和日常秩序驱动，喜欢让身边人感到被托住。",
+            tension: "你很想被感激，却常说不出口；付出久了，也怕自己只被当成习惯。",
+            stressMode: "压力下你会更努力照顾所有人，把焦虑藏进“我没事”里。",
+            growthReminder: "先把自己焐热，再给别人递温度。",
+            growthActions: [
+              "每天为自己做一件不带目的的小事",
+              "学会在不想答应时直接说“现在不行”",
+              "记录自己被人照顾的时刻，而不是只记住付出",
+            ],
+            attract: "会被稳定、温柔，也懂得表达珍惜的人吸引",
+            relationWatch: "过度付出，容易让别人把你的好当成理所当然。",
+            dailyRhythm: "你习惯把日常过稳，也总在默默照顾别人的细节。你的能量来自“被需要”，但排得太满时，你会忘记自己也需要一个被照顾的位置。",
+            decisionStyle: "你常先想别人会怎么感受，再决定要不要行动。这让你体贴，也让你在别人需要与你需要冲突时，容易先委屈自己。",
+            conflictStyle: "冲突时你会先递台阶，把关系顺下来，哪怕自己还堵着。你容易把“我没事”挂在嘴边，其实更想有人听你讲清楚。",
+            relationshipNeed: "你需要稳定的陪伴和明确的回应，更需要对方看见你付出的部分。你的安心感来自长期、可预期、彼此托底。",
+          },
+          seasalt: {
+            id: "seasalt",
+            name: "海盐型",
+            shortName: "海盐",
+            tagline: "不甜不腻，清醒里带一点咸涩，越品越有力量",
+            image: "./assets/taste-seasalt.jpg",
+            color: "#4f7084",
+            keywords: ["真实", "清醒", "有层次", "不讨巧"],
+            description:
+              "你不屑于把话包成糖，更喜欢说真话、做实事。像海盐一样，你可能不是第一口最讨喜的，但你的存在能让一切变得更有味道，也更真实。你的清醒让你不容易被带偏，可也让你比谁都清楚：太咸的时候，需要一点柔软的糖来平衡。",
+            strengths: ["边界清晰，敢说真话", "对虚伪很敏锐", "可靠，说到做到"],
+            challenges: ["容易显得太冷或太硬", "对废话和敷衍零容忍", "不擅长表达柔软"],
+            scene: "海边风很大的地方，或一个能直来直去、不用客套的场合。",
+            match: "能接受你的直接，也看得到你柔软一面的人。",
+            coreDrive: "你被真实、效率和清醒驱动，讨厌表面和平，宁愿要一次真实的碰撞。",
+            tension: "你一边坚持不讨巧，一边又渴望被温柔接住；于是常常把自己武装得很硬。",
+            stressMode: "压力下你会更锋利、更直接，用理性切断情绪，反而伤到最亲近的人。",
+            growthReminder: "真实可以温柔一点；软下来不等于妥协。",
+            growthActions: [
+              "在给出评价前，先补一句对方的努力",
+              "练习用“我需要”代替“你不对”",
+              "允许自己在安全的人面前示弱",
+            ],
+            attract: "会被真诚坦荡、不玩暧昧的人吸引",
+            relationWatch: "太直接，可能让关系少了一点缓冲和余地。",
+            dailyRhythm: "你喜欢清爽利落的节奏，讨厌废话和绕弯。你能一眼看见事情的本质，但有时会忘记，别人也许需要先被接住情绪，再听道理。",
+            decisionStyle: "你凭原则做判断，效率高，也容易显得武断。你会在“说真话”和“给余地”之间反复拉扯，因为你不愿把话包成糖。",
+            conflictStyle: "冲突时你会直说，甚至先指出问题。你不是不在乎关系，而是太想把事情说清；对方可能只听到锋利，没听到你后面的在意。",
+            relationshipNeed: "你需要被信任，也需要对方不因你的直接而走远。对你来说，能坦率表达而不必讨好，就是最舒服的关系。",
+          },
+          darkchoc: {
+            id: "darkchoc",
+            name: "黑巧型",
+            shortName: "黑巧",
+            tagline: "苦甜交叠，浓度很高，不是谁都能立刻尝懂",
+            image: "./assets/taste-darkchoc.jpg",
+            color: "#4a342e",
+            keywords: ["深沉", "浓度", "苦甜", "慢热深情"],
+            description:
+              "你像高浓度黑巧，入口先苦，之后才有层次丰富的回甘。你不轻易敞开，但一旦认真起来，感情和投入都很深。你习惯先尝出关系里的风险和重量，再决定要不要靠近；所以不是所有人都有耐心等到你回甘，但等到的人会明白那很值得。",
+            strengths: ["情感浓度高，认定后很认真", "审美和直觉都很有个人风格", "能在孤独中自处"],
+            challenges: ["容易想太多，情绪内耗", "不熟时显得有距离", "对浅关系缺乏耐心"],
+            scene: "夜晚的爵士酒吧，或一个能聊到天亮的安静房间。",
+            match: "愿意慢慢品尝你，也懂得欣赏你复杂层次的人。",
+            coreDrive: "你被深度、意义和真实联结驱动，讨厌流于表面的热闹。",
+            tension: "你渴望浓烈的关系，又怕受伤；所以先用冷淡筛选，再用深情试探。",
+            stressMode: "压力下你会更内向、更怀疑自己，把一点小事反复咀嚼成很大的苦味。",
+            growthReminder: "不是所有人都要尝懂你；别把值得的人挡在浓度之外。",
+            growthActions: [
+              "把反复纠结的一件事写下来，再决定要不要继续想",
+              "主动告诉亲近的人你的真实感受",
+              "允许浅一点的社交，不一定每段关系都要深刻",
+            ],
+            attract: "会被有故事、有边界，又能读懂你的人吸引",
+            relationWatch: "过度保护自己，可能让真诚的人误以为你不想靠近。",
+            dailyRhythm: "你的情绪和想法都有浓度，适合少量而深入的交流。热闹超过一定时长会让你累，你需要回到一个人的空间里把感受重新沉淀。",
+            decisionStyle: "你会把选择想得很深，反复推演各种后果。好处是你很少冲动，代价是容易卡在“还没有确定答案”里，迟迟不行动。",
+            conflictStyle: "冲突后你会先内耗，把对方的语气和细节来回咀嚼。你可能表面上不争，却需要很长时间确认关系是否安全，才愿意重新靠近。",
+            relationshipNeed: "你需要被真正读懂，也需要对方不逼你立刻热闹。深度和信任对你来说，比频繁联系更能证明一段关系。",
+          },
+          plumwine: {
+            id: "plumwine",
+            name: "青梅酒型",
+            shortName: "青梅酒",
+            tagline: "酸甜微醺，浪漫慢发酵，越放越有味道",
+            image: "./assets/taste-plumwine.jpg",
+            color: "#9a5d7b",
+            keywords: ["浪漫", "微醺", "慢发酵", "有回味"],
+            description:
+              "你像青梅酒，带着一点酸甜和轻微的醉意。你对生活有滤镜，总能把平凡时刻过出一点仪式感，也常常让身边人跟着柔软下来。你喜欢把期待泡在时间里慢慢发酵，但偶尔也会把想象调得太浓，忘记现实里的回应也需要你亲手去接。",
+            strengths: ["有浪漫感，擅长制造氛围", "感受力强，容易被小事打动", "会等待，愿意让关系慢慢发酵"],
+            challenges: ["情绪偏敏感，容易上头", "理想化他人，容易失望", "行动有时慢半拍"],
+            scene: "有晚风、有音乐，或和朋友小酌聊到很晚的夜晚。",
+            match: "懂你的浪漫，也愿意陪你把想象落进现实的人。",
+            coreDrive: "你被美感、暧昧和慢慢发酵的期待驱动，喜欢生活里有值得回味的部分。",
+            tension: "你渴望被热烈地爱着，又怕现实不如想象；于是在靠近和退缩之间反复。",
+            stressMode: "压力下你会更情绪化，也可能用逃避、拖延和幻想把自己泡在梦里。",
+            growthReminder: "浪漫很好，但现实里的回应也需要你伸手去接。",
+            growthActions: [
+              "把最想做的事缩小到今天能完成的一步",
+              "在心动时，给自己一点时间分辨想象和真实",
+              "练习把感受说成具体请求",
+            ],
+            attract: "会被温柔、会制造惊喜、也愿意认真回应你的人吸引",
+            relationWatch: "过度理想化，容易让自己在现实落差里反复受伤。",
+            dailyRhythm: "你喜欢生活里有留白、有滤镜、有值得期待的瞬间。你会把普通日子过得有点仪式感，但计划性偏弱，容易被情绪和想象带跑。",
+            decisionStyle: "你跟着感受走，容易在心动时下决定，又在冷静后反悔。你需要一点时间分辨“很吸引我”和“真的适合我”之间的差别。",
+            conflictStyle: "冲突时你容易上头，也容易回避；先靠幻想和拖延缓冲，等情绪过后才想清楚。你怕破坏氛围，所以常把真实需求藏进模糊的话里。",
+            relationshipNeed: "你需要被热烈回应，也需要对方把浪漫落进日常。你理想中的关系有回甘，但不能只靠想象，还要有真实的回应和行动。",
+          },
+        },
+        questions: [
+          {
+            kicker: "社交 01",
+            title: "结束一场很累的社交后，你最想做什么？",
+            options: [
+              { text: "立刻找点轻松的乐子，把疲惫冲掉", type: "sparkling" },
+              { text: "一个人安静待着，让浓度慢慢回落", type: "coldbrew" },
+              { text: "回家做点热乎的，把自己焐回来", type: "hottea" },
+              { text: "复盘今天哪些话该说、哪些不该说", type: "seasalt" },
+            ],
+          },
+          {
+            kicker: "关系 02",
+            title: "朋友失联三天，你的第一反应更接近？",
+            options: [
+              { text: "先不催，等 TA 自己出现", type: "coldbrew" },
+              { text: "有点担心，同时想是不是哪里出了问题", type: "darkchoc" },
+              { text: "给 TA 发一段有点浪漫又带点情绪的话", type: "plumwine" },
+              { text: "主动问一句，确认 TA 有没有事", type: "hottea" },
+            ],
+          },
+          {
+            kicker: "边界 03",
+            title: "你最不能接受哪种朋友？",
+            options: [
+              { text: "表面客气、背后一套", type: "seasalt" },
+              { text: "太负能量，什么都能抱怨", type: "sparkling" },
+              { text: "太现实，毫无生活情趣", type: "plumwine" },
+              { text: "太浅，什么都停在寒暄", type: "darkchoc" },
+            ],
+          },
+          {
+            kicker: "温度 04",
+            title: "如果情绪有温度，你更接近？",
+            options: [
+              { text: "温的，能持续给别人暖意", type: "hottea" },
+              { text: "有点凉，但清冽直接", type: "seasalt" },
+              { text: "偏冷，慢热后才升温", type: "coldbrew" },
+              { text: "微热，带一点上头", type: "plumwine" },
+            ],
+          },
+          {
+            kicker: "反应 05",
+            title: "面对临时邀约，你的身体反应更接近？",
+            options: [
+              { text: "先警惕，怕打乱自己的节奏", type: "darkchoc" },
+              { text: "先兴奋，感觉可以去看看", type: "sparkling" },
+              { text: "先问有谁，确认氛围是否舒服", type: "hottea" },
+              { text: "先看自己今天还有没有余量", type: "coldbrew" },
+            ],
+          },
+          {
+            kicker: "反馈 06",
+            title: "你最希望别人怎么夸你？",
+            options: [
+              { text: "你让普通日子变得浪漫了", type: "plumwine" },
+              { text: "和你在一起很轻松", type: "sparkling" },
+              { text: "你说话直接，但句句在理", type: "seasalt" },
+              { text: "你很有深度，越了解越迷人", type: "darkchoc" },
+            ],
+          },
+          {
+            kicker: "亲密 07",
+            title: "一段关系开始前，你最需要的是？",
+            options: [
+              { text: "足够的时间，慢慢确认", type: "coldbrew" },
+              { text: "明确的回应和稳定陪伴", type: "hottea" },
+              { text: "一点暧昧和值得回味的瞬间", type: "plumwine" },
+              { text: "当下的快乐，不要先想太远", type: "sparkling" },
+            ],
+          },
+          {
+            kicker: "取舍 08",
+            title: "如果生活必须去掉一种味道，你最舍不得？",
+            options: [
+              { text: "清醒，那让你不轻易迷失", type: "seasalt" },
+              { text: "深度，那让你觉得活着有重量", type: "darkchoc" },
+              { text: "独处，那让你找回自己", type: "coldbrew" },
+              { text: "温度，那让你愿意靠近别人", type: "hottea" },
+            ],
+          },
+        ],
+      };
+    </script>
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <div class="app" id="app">
+      <section class="screen intro-screen is-active" data-screen="intro" aria-labelledby="intro-title">
+        <div class="intro-media" aria-hidden="true">
+          <img src="./assets/taste-hero.jpg" alt="" />
+        </div>
+        <div class="intro-overlay" aria-hidden="true"></div>
+        <div class="intro-content">
+          <div class="eyebrow">
+            <span class="eyebrow-dot"></span>
+            口感型人格测评
+          </div>
+          <h1 id="intro-title">你的灵魂口感</h1>
+          <p class="intro-copy">
+            8 道没有标准答案的味觉题，尝出你藏在日常里的味道。
+          </p>
+          <button class="primary-button" id="start-button" type="button">
+            <span>开始品尝</span>
+            <i data-lucide="arrow-right"></i>
+          </button>
+          <div class="intro-meta">
+            <span><i data-lucide="clock-3"></i> 约 1 分钟</span>
+            <span><i data-lucide="sparkles"></i> 8 道直觉题</span>
+          </div>
+        </div>
+        <div class="scroll-cue" aria-hidden="true">
+          <span>凭第一直觉作答</span>
+          <i data-lucide="chevron-down"></i>
+        </div>
+      </section>
+
+      <section class="screen quiz-screen" data-screen="quiz" aria-labelledby="quiz-title">
+        <div class="quiz-shell">
+          <div class="quiz-topbar">
+            <button class="icon-button" id="back-button" type="button" aria-label="返回上一题">
+              <i data-lucide="arrow-left"></i>
+            </button>
+            <div class="progress-track" aria-hidden="true">
+              <div class="progress-fill" id="progress-fill"></div>
+            </div>
+            <span class="question-count" id="question-count">1 / 8</span>
+          </div>
+
+          <div class="question-stage" id="question-stage">
+            <p class="question-kicker" id="question-kicker"></p>
+            <h2 id="quiz-title" class="question-title"></h2>
+            <div class="options" id="options"></div>
+          </div>
+
+          <div class="quiz-footer">
+            <p class="quiz-hint">凭第一直觉选择，别想太久。</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen result-screen" data-screen="result" aria-labelledby="result-title">
+        <div class="result-hero" id="result-hero">
+          <div class="result-hero-filter" aria-hidden="true"></div>
+          <div class="result-badge">你的灵魂口感</div>
+        </div>
+
+        <div class="result-body">
+          <div class="result-title-wrap">
+            <p class="result-kicker" id="result-kicker"></p>
+            <h2 id="result-title"></h2>
+            <p class="result-tagline" id="result-tagline"></p>
+          </div>
+
+          <div class="result-keywords" id="result-keywords"></div>
+
+          <p class="result-description" id="result-description"></p>
+
+          <div class="personality-meter" id="personality-meter"></div>
+
+          <div class="secondary-card" id="secondary-card">
+            <span class="secondary-label">隐藏补充口感</span>
+            <strong id="secondary-name"></strong>
+            <p id="secondary-text"></p>
+          </div>
+
+          <section class="deep-dive" aria-labelledby="deep-dive-title">
+            <div class="section-heading">
+              <span>风味画像</span>
+              <h2 id="deep-dive-title">你不只是这个答案</h2>
+            </div>
+
+            <div class="insight-grid">
+              <article class="result-card">
+                <div class="card-heading">
+                  <i data-lucide="compass"></i>
+                  <h3>核心动力</h3>
+                </div>
+                <p class="result-text" id="result-core-drive"></p>
+              </article>
+
+              <article class="result-card">
+                <div class="card-heading">
+                  <i data-lucide="split"></i>
+                  <h3>内在张力</h3>
+                </div>
+                <p class="result-text" id="result-tension"></p>
+              </article>
+
+              <article class="result-card">
+                <div class="card-heading">
+                  <i data-lucide="waves"></i>
+                  <h3>压力下的你</h3>
+                </div>
+                <p class="result-text" id="result-stress"></p>
+              </article>
+
+              <article class="result-card">
+                <div class="card-heading">
+                  <i data-lucide="message-circle-heart"></i>
+                  <h3>给自己的一句话</h3>
+                </div>
+                <p class="result-text" id="result-reminder"></p>
+              </article>
+            </div>
+
+            <article class="result-card growth-card">
+              <div class="card-heading">
+                <i data-lucide="sprout"></i>
+                <h3>三个成长练习</h3>
+              </div>
+              <ol class="growth-list" id="growth-list"></ol>
+            </article>
+          </section>
+
+          <section class="deep-dive behavior-dive" aria-labelledby="behavior-dive-title">
+            <div class="section-heading">
+              <span>行为切面</span>
+              <h2 id="behavior-dive-title">在具体情境里，你会怎么反应</h2>
+            </div>
+
+            <div class="insight-grid">
+              <article class="result-card">
+                <div class="card-heading">
+                  <i data-lucide="clock-3"></i>
+                  <h3>日常节奏</h3>
+                </div>
+                <p class="result-text" id="result-daily-rhythm"></p>
+              </article>
+
+              <article class="result-card">
+                <div class="card-heading">
+                  <i data-lucide="split"></i>
+                  <h3>做决定时</h3>
+                </div>
+                <p class="result-text" id="result-decision-style"></p>
+              </article>
+
+              <article class="result-card">
+                <div class="card-heading">
+                  <i data-lucide="zap"></i>
+                  <h3>冲突时</h3>
+                </div>
+                <p class="result-text" id="result-conflict-style"></p>
+              </article>
+
+              <article class="result-card">
+                <div class="card-heading">
+                  <i data-lucide="heart-handshake"></i>
+                  <h3>关系里最需要</h3>
+                </div>
+                <p class="result-text" id="result-relationship-need"></p>
+              </article>
+            </div>
+          </section>
+
+          <div class="result-grid">
+            <article class="result-card">
+              <div class="card-heading">
+                <i data-lucide="sun"></i>
+                <h3>你的高光时刻</h3>
+              </div>
+              <ul id="strength-list" class="result-list"></ul>
+            </article>
+
+            <article class="result-card">
+              <div class="card-heading">
+                <i data-lucide="moon"></i>
+                <h3>容易发苦的瞬间</h3>
+              </div>
+              <ul id="challenge-list" class="result-list"></ul>
+            </article>
+
+            <article class="result-card result-card-wide">
+              <div class="card-heading">
+                <i data-lucide="map-pin"></i>
+                <h3>最适合你的场域</h3>
+              </div>
+              <p id="result-scene" class="result-text"></p>
+            </article>
+
+            <article class="result-card result-card-wide">
+              <div class="card-heading">
+                <i data-lucide="heart"></i>
+                <h3>和你合拍的人</h3>
+              </div>
+              <p id="result-match" class="result-text"></p>
+            </article>
+
+            <article class="result-card">
+              <div class="card-heading">
+                <i data-lucide="magnet"></i>
+                <h3>你容易被谁吸引</h3>
+              </div>
+              <p id="result-attract" class="result-text"></p>
+            </article>
+
+            <article class="result-card">
+              <div class="card-heading">
+                <i data-lucide="triangle-alert"></i>
+                <h3>关系里需要留意</h3>
+              </div>
+              <p id="result-watch" class="result-text"></p>
+            </article>
+          </div>
+
+          <div class="result-actions">
+            <button class="primary-button" id="share-button" type="button">
+              <span>分享我的口感</span>
+              <i data-lucide="share-2"></i>
+            </button>
+            <button class="secondary-button" id="restart-button" type="button">
+              <span>重新尝一次</span>
+              <i data-lucide="rotate-ccw"></i>
+            </button>
+          </div>
+
+          <p class="result-note">结果只是认识自己的入口，不是标签。</p>
+        </div>
+      </section>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>

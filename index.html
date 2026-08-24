@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#171b25" />
+    <title>测评库</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./hub.css" />
+    <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.js" defer></script>
+    <script defer>
+      window.addEventListener("load", () => {
+        if (window.lucide) window.lucide.createIcons();
+      });
+    </script>
+  </head>
+  <body>
+    <main class="hub-shell">
+      <header class="hub-header">
+        <p class="hub-kicker">直觉型人格测评库</p>
+        <h1>今天想认识哪个自己？</h1>
+        <p>两个入口，各 8 道没有标准答案的选择题，凭第一直觉作答。</p>
+      </header>
+
+      <section class="hub-grid" aria-label="测评列表">
+        <a class="quiz-card" href="./personality.html">
+          <div class="quiz-card-media">
+            <img src="./assets/hero.jpg" alt="" />
+            <span class="card-badge">8 道题 · 约 1 分钟</span>
+          </div>
+          <div class="quiz-card-body">
+            <p class="card-kicker">直觉型人格测评</p>
+            <h2>隐藏人格画像</h2>
+            <p>画出你下意识里最像自己的样子，看见你常被忽略的另一张脸。</p>
+            <span class="card-cta">
+              开始探索
+              <i data-lucide="arrow-right"></i>
+            </span>
+          </div>
+        </a>
+
+        <a class="quiz-card" href="./taste.html">
+          <div class="quiz-card-media">
+            <img src="./assets/taste-hero.jpg" alt="" />
+            <span class="card-badge">8 道题 · 约 1 分钟</span>
+          </div>
+          <div class="quiz-card-body">
+            <p class="card-kicker">口感型人格测评</p>
+            <h2>灵魂口感</h2>
+            <p>用六种味道尝出你藏在日常里的情绪、节奏和关系偏好。</p>
+            <span class="card-cta">
+              开始品尝
+              <i data-lucide="arrow-right"></i>
+            </span>
+          </div>
+        </a>
+      </section>
+
+      <p class="hub-note">结果只是认识自己的入口，不是标签。</p>
+    </main>
+  </body>
+</html>

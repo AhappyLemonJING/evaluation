@@ -1,0 +1,30 @@
+:root {
+  --ink: #251b1c;
+  --muted: #7b6f6d;
+  --paper: #f6f1ed;
+  --line: #e6dcd3;
+  --white: #ffffff;
+  --teal: #5d7d72;
+  --coral: #cf735d;
+  --amber: #d09a5b;
+  --forest: #5f6e55;
+  --moon: #7f6c80;
+}
+
+body {
+  color: var(--ink);
+  background: var(--paper);
+}
+
+.intro-screen {
+  background: var(--ink);
+}
+
+.eyebrow-dot {
+  background: var(--coral);
+  box-shadow: 0 0 0 5px rgba(207, 115, 93, 0.22);
+}
+
+.intro-content h1 {
+  max-width: 640px;
+}
