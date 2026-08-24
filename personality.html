@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#171b25" />
+    <title>隐藏人格画像</title>
+    <link rel="stylesheet" href="./styles.css?v=2" />
+    <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.js" defer></script>
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <div class="app" id="app">
+      <!-- 开屏 -->
+      <section class="screen intro-screen is-active" data-screen="intro" aria-labelledby="intro-title">
+        <div class="intro-media" aria-hidden="true">
+          <img src="./assets/hero.jpg" alt="" />
+        </div>
+        <div class="intro-overlay" aria-hidden="true"></div>
+        <div class="intro-content">
+          <div class="eyebrow">
+            <span class="eyebrow-dot"></span>
+            直觉型人格测评
+          </div>
+          <h1 id="intro-title">你的隐藏人格画像</h1>
+          <p class="intro-copy">
+            8 道没有标准答案的选择题，画出你下意识里最像自己的样子。
+          </p>
+          <button class="primary-button" id="start-button" type="button">
+            <span>开始探索</span>
+            <i data-lucide="arrow-right"></i>
+          </button>
+          <div class="intro-meta">
+            <span><i data-lucide="clock-3"></i> 约 1 分钟</span>
+            <span><i data-lucide="sparkles"></i> 8 道直觉题</span>
+          </div>
+        </div>
+        <div class="scroll-cue" aria-hidden="true">
+          <span>凭第一直觉作答</span>
+          <i data-lucide="chevron-down"></i>
+        </div>
+      </section>
+
+      <!-- 答题 -->
+      <section class="screen quiz-screen" data-screen="quiz" aria-labelledby="quiz-title">
+        <div class="quiz-shell">
+          <div class="quiz-topbar">
+            <button class="icon-button" id="back-button" type="button" aria-label="返回上一题">
+              <i data-lucide="arrow-left"></i>
+            </button>
+            <div class="progress-track" aria-hidden="true">
+              <div class="progress-fill" id="progress-fill"></div>
+            </div>
+            <span class="question-count" id="question-count">1 / 8</span>
+          </div>
+
+          <div class="question-stage" id="question-stage">
+            <p class="question-kicker" id="question-kicker"></p>
+            <h2 id="quiz-title" class="question-title"></h2>
+            <div class="options" id="options"></div>
+          </div>
+
+          <div class="quiz-footer">
+            <p class="quiz-hint">凭第一直觉选择，别想太久。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 结果 -->
+      <section class="screen result-screen" data-screen="result" aria-labelledby="result-title">
+        <div class="result-hero" id="result-hero">
+          <div class="result-hero-filter" aria-hidden="true"></div>
+          <div class="result-badge">你的隐藏人格</div>
+        </div>
+
+        <div class="result-body">
+          <div class="result-title-wrap">
+            <p class="result-kicker" id="result-kicker"></p>
+            <h2 id="result-title"></h2>
+            <p class="result-tagline" id="result-tagline"></p>
+          </div>
+
+          <div class="result-keywords" id="result-keywords"></div>
+
+          <p class="result-description" id="result-description"></p>
+
+          <div class="personality-meter" id="personality-meter"></div>
+
+          <div class="secondary-card" id="secondary-card">
+            <span class="secondary-label">隐藏补充人格</span>
+            <strong id="secondary-name"></strong>
+            <p id="secondary-text"></p>
+          </div>
+
+          <section class="deep-dive" aria-labelledby="deep-dive-title">
+            <div class="section-heading">
+              <span>深度画像</span>
+              <h2 id="deep-dive-title">你不只是这个答案</h2>
+            </div>
+
+            <div class="insight-grid">
+              <article class="result-card">
+                <div class="card-heading">
+                  <i data-lucide="compass"></i>
+                  <h3>核心动力</h3>
+                </div>
+                <p class="result-text" id="result-core-drive"></p>
+              </article>
+
+              <article class="result-card">
+                <div class="card-heading">
+                  <i data-lucide="split"></i>
+                  <h3>内在张力</h3>
+                </div>
+                <p class="result-text" id="result-tension"></p>
+              </article>
+
+              <article class="result-card">
+                <div class="card-heading">
+                  <i data-lucide="waves"></i>
+                  <h3>压力下的你</h3>
+                </div>
+                <p class="result-text" id="result-stress"></p>
+              </article>
+
+              <article class="result-card">
+                <div class="card-heading">
+                  <i data-lucide="message-circle-heart"></i>
+                  <h3>给自己的一句话</h3>
+                </div>
+                <p class="result-text" id="result-reminder"></p>
+              </article>
+            </div>
+
+            <article class="result-card growth-card">
+              <div class="card-heading">
+                <i data-lucide="sprout"></i>
+                <h3>三个成长练习</h3>
+              </div>
+              <ol class="growth-list" id="growth-list"></ol>
+            </article>
+          </section>
+
+          <section class="deep-dive behavior-dive" aria-labelledby="behavior-dive-title">
+            <div class="section-heading">
+              <span>行为切面</span>
+              <h2 id="behavior-dive-title">在具体情境里，你会怎么反应</h2>
+            </div>
+
+            <div class="insight-grid">
+              <article class="result-card">
+                <div class="card-heading">
+                  <i data-lucide="clock-3"></i>
+                  <h3>日常节奏</h3>
+                </div>
+                <p class="result-text" id="result-daily-rhythm"></p>
+              </article>
+
+              <article class="result-card">
+                <div class="card-heading">
+                  <i data-lucide="split"></i>
+                  <h3>做决定时</h3>
+                </div>
+                <p class="result-text" id="result-decision-style"></p>
+              </article>
+
+              <article class="result-card">
+                <div class="card-heading">
+                  <i data-lucide="zap"></i>
+                  <h3>冲突时</h3>
+                </div>
+                <p class="result-text" id="result-conflict-style"></p>
+              </article>
+
+              <article class="result-card">
+                <div class="card-heading">
+                  <i data-lucide="heart-handshake"></i>
+                  <h3>关系里最需要</h3>
+                </div>
+                <p class="result-text" id="result-relationship-need"></p>
+              </article>
+            </div>
+          </section>
+
+          <div class="result-grid">
+            <article class="result-card">
+              <div class="card-heading">
+                <i data-lucide="sun"></i>
+                <h3>你的超能力</h3>
+              </div>
+              <ul id="strength-list" class="result-list"></ul>
+            </article>
+
+            <article class="result-card">
+              <div class="card-heading">
+                <i data-lucide="moon"></i>
+                <h3>能量消耗点</h3>
+              </div>
+              <ul id="challenge-list" class="result-list"></ul>
+            </article>
+
+            <article class="result-card result-card-wide">
+              <div class="card-heading">
+                <i data-lucide="map-pin"></i>
+                <h3>最适合你的场域</h3>
+              </div>
+              <p id="result-scene" class="result-text"></p>
+            </article>
+
+            <article class="result-card result-card-wide">
+              <div class="card-heading">
+                <i data-lucide="heart"></i>
+                <h3>和你合拍的人</h3>
+              </div>
+              <p id="result-match" class="result-text"></p>
+            </article>
+
+            <article class="result-card">
+              <div class="card-heading">
+                <i data-lucide="magnet"></i>
+                <h3>你容易被谁吸引</h3>
+              </div>
+              <p id="result-attract" class="result-text"></p>
+            </article>
+
+            <article class="result-card">
+              <div class="card-heading">
+                <i data-lucide="triangle-alert"></i>
+                <h3>关系里需要留意</h3>
+              </div>
+              <p id="result-watch" class="result-text"></p>
+            </article>
+          </div>
+
+          <div class="result-actions">
+            <button class="primary-button" id="share-button" type="button">
+              <span>分享我的结果</span>
+              <i data-lucide="share-2"></i>
+            </button>
+            <button class="secondary-button" id="restart-button" type="button">
+              <span>重新测一次</span>
+              <i data-lucide="rotate-ccw"></i>
+            </button>
+          </div>
+
+          <p class="result-note">结果只是认识自己的入口，不是标签。</p>
+        </div>
+      </section>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
