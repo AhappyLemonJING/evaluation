@@ -415,6 +415,44 @@ button,
   background: linear-gradient(180deg, rgba(16, 19, 28, 0.08) 0%, rgba(16, 19, 28, 0.62) 100%);
 }
 
+.personality-result-screen .result-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: auto;
+  min-height: 600px;
+  padding: 34px 20px 44px;
+  background: linear-gradient(180deg, #f7f4ed 0%, #eee8dc 100%);
+}
+
+.personality-result-screen .result-badge {
+  position: static;
+  z-index: auto;
+  margin-bottom: 14px;
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.74);
+  border-color: rgba(23, 27, 37, 0.12);
+  backdrop-filter: none;
+}
+
+.personality-result-screen .result-ip-stage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: min(100%, 520px);
+  height: min(64vh, 600px);
+}
+
+.personality-result-screen .result-ip-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  filter: drop-shadow(0 24px 40px rgba(23, 27, 37, 0.16));
+}
+
 .result-badge {
   position: relative;
   z-index: 1;
@@ -808,6 +846,17 @@ button,
   .result-hero {
     height: 300px;
     padding: 22px;
+  }
+
+  .personality-result-screen .result-hero {
+    height: auto;
+    min-height: 0;
+    padding: 24px 16px 28px;
+  }
+
+  .personality-result-screen .result-ip-stage {
+    width: 100%;
+    height: min(58vh, 520px);
   }
 
   .result-body {

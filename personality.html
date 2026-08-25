@@ -24,15 +24,15 @@
           </div>
           <h1 id="intro-title">你的隐藏人格画像</h1>
           <p class="intro-copy">
-            8 道没有标准答案的选择题，画出你下意识里最像自己的样子。
+            20 道没有标准答案的选择题，画出你下意识里最像自己的样子。
           </p>
           <button class="primary-button" id="start-button" type="button">
             <span>开始探索</span>
             <i data-lucide="arrow-right"></i>
           </button>
           <div class="intro-meta">
-            <span><i data-lucide="clock-3"></i> 约 1 分钟</span>
-            <span><i data-lucide="sparkles"></i> 8 道直觉题</span>
+            <span><i data-lucide="clock-3"></i> 约 2 分钟</span>
+            <span><i data-lucide="sparkles"></i> 20 道直觉题</span>
           </div>
         </div>
         <div class="scroll-cue" aria-hidden="true">
@@ -51,7 +51,7 @@
             <div class="progress-track" aria-hidden="true">
               <div class="progress-fill" id="progress-fill"></div>
             </div>
-            <span class="question-count" id="question-count">1 / 8</span>
+            <span class="question-count" id="question-count">1 / 20</span>
           </div>
 
           <div class="question-stage" id="question-stage">
@@ -67,10 +67,12 @@
       </section>
 
       <!-- 结果 -->
-      <section class="screen result-screen" data-screen="result" aria-labelledby="result-title">
-        <div class="result-hero" id="result-hero">
-          <div class="result-hero-filter" aria-hidden="true"></div>
-          <div class="result-badge">你的隐藏人格</div>
+      <section class="screen result-screen personality-result-screen" data-screen="result" aria-labelledby="result-title">
+        <div class="result-hero personality-result-hero" id="result-hero">
+          <div class="result-badge personality-result-badge">你的隐藏人格</div>
+          <div class="result-ip-stage">
+            <img class="result-ip-image" id="result-image" alt="你的隐藏人格形象" />
+          </div>
         </div>
 
         <div class="result-body">
