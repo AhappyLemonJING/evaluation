@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0b0d12" />
+    <title>反灵魂档案</title>
+    <link rel="stylesheet" href="./styles.css?v=2" />
+    <link rel="stylesheet" href="./anti-soul.css" />
+    <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.js" defer></script>
+    <script src="./anti-soul.js" defer></script>
+  </head>
+  <body>
+    <div class="as-app" id="as-app">
+      <section class="as-screen as-intro is-active" data-screen="intro" aria-labelledby="intro-title">
+        <div class="as-intro-media" aria-hidden="true">
+          <img src="./assets/anti-soul-hero.jpg" alt="" />
+        </div>
+        <div class="as-intro-scrim" aria-hidden="true"></div>
+        <div class="as-intro-content">
+          <div class="as-eyebrow">
+            <span class="as-eyebrow-dot"></span>
+            反向人格探测
+          </div>
+          <h1 id="intro-title">反灵魂档案</h1>
+          <p class="as-intro-copy">
+            不问你喜欢的，只测你逃避的。凭第一反应，把你不愿承认的那部分扫出来。
+          </p>
+          <button class="as-button as-button-primary" id="start-button" type="button">
+            <span>开始建档</span>
+            <i data-lucide="scan-search"></i>
+          </button>
+          <div class="as-intro-meta">
+            <span><i data-lucide="timer"></i> 约 5 分钟</span>
+            <span><i data-lucide="brain-circuit"></i> 20 道直觉题</span>
+            <span><i data-lucide="eye-off"></i> 记录你的回避</span>
+          </div>
+        </div>
+        <div class="as-scroll-cue" aria-hidden="true">
+          <span>别修饰你的反感</span>
+          <i data-lucide="chevron-down"></i>
+        </div>
+      </section>
+
+      <section class="as-screen as-quiz-screen" data-screen="quiz" aria-labelledby="quiz-title">
+        <div class="as-quiz-shell">
+          <div class="as-quiz-topbar">
+            <button class="as-icon-button" id="back-button" type="button" aria-label="返回上一题" disabled>
+              <i data-lucide="arrow-left"></i>
+            </button>
+            <div class="as-progress-track" aria-hidden="true">
+              <div class="as-progress-fill" id="progress-fill"></div>
+            </div>
+            <span class="as-question-count" id="question-count">1 / 8</span>
+          </div>
+
+          <div class="as-question-stage" id="question-stage">
+            <div class="as-live-signal" aria-hidden="true">
+              <span></span>
+              防御信号采集中
+            </div>
+            <p class="as-question-kicker" id="question-kicker"></p>
+            <h2 id="quiz-title" class="as-question-title"></h2>
+            <div class="as-options" id="options"></div>
+          </div>
+
+          <div class="as-quiz-footer">
+            <p>选择越快，越接近你真正的第一反应。</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="as-screen result-screen personality-result-screen anti-soul-result-screen" data-screen="result" aria-labelledby="result-title">
+        <div class="result-hero personality-result-hero" id="result-hero">
+          <div class="result-badge personality-result-badge">档案已生成</div>
+          <div class="result-ip-stage">
+            <img class="result-ip-image" id="result-image" src="./assets/深海洞察者.jpg" alt="反灵魂档案形象" />
+          </div>
+        </div>
+
+        <div class="result-body">
+          <div class="result-title-wrap">
+            <p class="result-kicker" id="result-kicker">你的反灵魂核心</p>
+            <h2 id="result-title"></h2>
+            <p class="result-tagline" id="result-tagline"></p>
+            <p class="result-profile-code" id="profile-code"></p>
+          </div>
+
+          <div class="result-keywords" id="result-keywords"></div>
+
+          <p class="result-description" id="result-description"></p>
+
+          <div class="personality-meter" id="personality-meter"></div>
+
+          <div class="secondary-card" id="secondary-card">
+            <span class="secondary-label">防御等级</span>
+            <strong id="secondary-name"></strong>
+            <p id="secondary-text"></p>
+          </div>
+
+          <section class="deep-dive" aria-labelledby="deep-dive-title">
+            <div class="section-heading">
+              <span>档案侧写</span>
+              <h2 id="deep-dive-title">被压下去的能量，会从哪里冒出来</h2>
+            </div>
+
+            <div class="insight-grid">
+              <article class="result-card">
+                <div class="card-heading">
+                  <i data-lucide="radio"></i>
+                  <h3>防御信号</h3>
+                </div>
+                <p class="result-text" id="result-signal"></p>
+              </article>
+
+              <article class="result-card">
+                <div class="card-heading">
+                  <i data-lucide="heart-crack"></i>
+                  <h3>关系裂缝</h3>
+                </div>
+                <p class="result-text" id="result-relation"></p>
+              </article>
+
+              <article class="result-card result-card-wide">
+                <div class="card-heading">
+                  <i data-lucide="recycle"></i>
+                  <h3>回收练习</h3>
+                </div>
+                <p class="result-text" id="result-practice"></p>
+              </article>
+            </div>
+          </section>
+
+          <section class="deep-dive" aria-labelledby="shadow-dive-title">
+            <div class="section-heading">
+              <span>暗面画像</span>
+              <h2 id="shadow-dive-title">你不是没有看见，只是还不愿意承认</h2>
+            </div>
+
+            <div class="insight-grid">
+              <article class="result-card">
+                <div class="card-heading">
+                  <i data-lucide="split"></i>
+                  <h3>核心冲突</h3>
+                </div>
+                <p class="result-text" id="result-core-conflict"></p>
+              </article>
+
+              <article class="result-card">
+                <div class="card-heading">
+                  <i data-lucide="zap"></i>
+                  <h3>触发情境</h3>
+                </div>
+                <p class="result-text" id="result-trigger"></p>
+              </article>
+
+              <article class="result-card">
+                <div class="card-heading">
+                  <i data-lucide="waves"></i>
+                  <h3>压力下的你</h3>
+                </div>
+                <p class="result-text" id="result-stress"></p>
+              </article>
+
+              <article class="result-card">
+                <div class="card-heading">
+                  <i data-lucide="message-circle-heart"></i>
+                  <h3>给自己的一句话</h3>
+                </div>
+                <p class="result-text" id="result-reminder"></p>
+              </article>
+            </div>
+          </section>
+
+          <section class="deep-dive" aria-labelledby="behavior-dive-title">
+            <div class="section-heading">
+              <span>行为切面</span>
+              <h2 id="behavior-dive-title">在具体情境里，你会怎么反应</h2>
+            </div>
+
+            <div class="insight-grid">
+              <article class="result-card">
+                <div class="card-heading">
+                  <i data-lucide="mask"></i>
+                  <h3>日常伪装</h3>
+                </div>
+                <p class="result-text" id="result-daily-mask"></p>
+              </article>
+
+              <article class="result-card">
+                <div class="card-heading">
+                  <i data-lucide="git-branch"></i>
+                  <h3>做决定时</h3>
+                </div>
+                <p class="result-text" id="result-decision-style"></p>
+              </article>
+
+              <article class="result-card">
+                <div class="card-heading">
+                  <i data-lucide="swords"></i>
+                  <h3>冲突时</h3>
+                </div>
+                <p class="result-text" id="result-conflict-style"></p>
+              </article>
+
+              <article class="result-card">
+                <div class="card-heading">
+                  <i data-lucide="heart-handshake"></i>
+                  <h3>关系里最需要</h3>
+                </div>
+                <p class="result-text" id="result-relationship-need"></p>
+              </article>
+            </div>
+          </section>
+
+          <div class="result-grid">
+            <article class="result-card">
+              <div class="card-heading">
+                <i data-lucide="sun"></i>
+                <h3>你的暗面优势</h3>
+              </div>
+              <ul id="strength-list" class="result-list"></ul>
+            </article>
+
+            <article class="result-card">
+              <div class="card-heading">
+                <i data-lucide="moon"></i>
+                <h3>能量消耗点</h3>
+              </div>
+              <ul id="challenge-list" class="result-list"></ul>
+            </article>
+
+            <article class="result-card result-card-wide">
+              <div class="card-heading">
+                <i data-lucide="map-pin"></i>
+                <h3>最适合你的清醒场域</h3>
+              </div>
+              <p id="result-scene" class="result-text"></p>
+            </article>
+
+            <article class="result-card result-card-wide">
+              <div class="card-heading">
+                <i data-lucide="heart"></i>
+                <h3>能让你卸下伪装的人</h3>
+              </div>
+              <p id="result-match" class="result-text"></p>
+            </article>
+
+            <article class="result-card">
+              <div class="card-heading">
+                <i data-lucide="magnet"></i>
+                <h3>你容易被谁触发</h3>
+              </div>
+              <p id="result-attract" class="result-text"></p>
+            </article>
+
+            <article class="result-card">
+              <div class="card-heading">
+                <i data-lucide="triangle-alert"></i>
+                <h3>需要留意</h3>
+              </div>
+              <p id="result-watch" class="result-text"></p>
+            </article>
+          </div>
+
+          <div class="result-actions">
+            <button class="primary-button" id="share-button" type="button">
+              <span>分享我的档案</span>
+              <i data-lucide="share-2"></i>
+            </button>
+            <button class="secondary-button" id="restart-button" type="button">
+              <span>重新扫描</span>
+              <i data-lucide="rotate-ccw"></i>
+            </button>
+          </div>
+
+          <p class="result-note">这些不是你的缺点，而是你暂时不允许自己承认的部分。</p>
+        </div>
+      </section>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
