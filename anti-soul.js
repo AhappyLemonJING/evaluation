@@ -728,6 +728,11 @@
       rich.tagline || "你最不愿承认，也最像你的暗面。";
     document.getElementById("result-description").textContent = primary.description;
     document.getElementById("profile-code").textContent = `档案编号 ${code}`;
+    const resultImage = document.getElementById("result-image");
+    if (resultImage) {
+      resultImage.src = `./assets/${primary.name}.jpg`;
+      resultImage.alt = `${primary.name} 反灵魂档案形象`;
+    }
 
     renderKeywords(rich.keywords || [primary.shortName, secondary.shortName, tertiary.shortName], denial);
     renderMeter([primary, secondary, tertiary], scores);
